@@ -1,4 +1,4 @@
-function MyProjects() {
+function MyProjects({ projectsRef }) {
   const data = [
     {
       name: "Final Fantasy XIV Relic Weapons",
@@ -70,10 +70,11 @@ function MyProjects() {
 
   return (
     <section
+      ref={projectsRef}
       id="myprojects"
-      className="min-h-[100vh] py-[3.5em] px-[2em] flex flex-col items-center justify-center gap-[3em] text-[1.1rem] text-center text-neutral-200 bg-[#240d02] min-[1200px]:px-[10em]"
+      className="pt-[7em] pb-[4em] px-[2em] flex flex-col items-center justify-center gap-[3em] text-[1.1rem] text-center text-neutral-200 bg-[#250E09] min-[1200px]:px-[10em]"
     >
-      <h1 className="text-[1.9rem] font-bold min-[800px]:text-[2.5rem] border-l-[0.2em] pl-[0.5em] border-l-orange-500 min-[1200px]:self-start">
+      <h1 className="text-[1.9rem] font-bold min-[800px]:text-[2.5rem] border-l-[0.2em] pl-[0.5em] border-l-orange-500 min-[1200px]:self-start min-[1200px]:mb-[1.5em]">
         My Projects
       </h1>
       <div className="flex flex-col gap-[5em] justify-center">{projectsEl}</div>
