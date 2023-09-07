@@ -9,8 +9,6 @@ function App() {
   const [aboutRef, aboutInView] = useInView();
   const [projectsRef, projectsInView] = useInView();
 
-  console.log(aboutInView, projectsInView);
-
   return (
     <div>
       <Home />
