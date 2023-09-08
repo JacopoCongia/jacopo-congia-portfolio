@@ -6,13 +6,15 @@ import MyProjects from "./components/MyProjects";
 import Footer from "./components/Footer";
 
 function App() {
-  const [aboutRef, aboutInView] = useInView();
-  const [projectsRef, projectsInView] = useInView();
+  const [homeRef, homeInView] = useInView({ rootMargin: "-50% 0px" });
+  const [aboutRef, aboutInView] = useInView({ rootMargin: "-50% 0px" });
+  const [projectsRef, projectsInView] = useInView({ rootMargin: "-50% 0px" });
 
   return (
     <div>
-      <Home />
+      <Home homeRef={homeRef} />
       <Navbar
+        homeInView={homeInView}
         aboutInView={aboutInView}
         projectsInView={projectsInView}
       />
