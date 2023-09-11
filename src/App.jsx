@@ -12,12 +12,12 @@ function App() {
 
   return (
     <div>
-      <Home homeRef={homeRef} />
       <Navbar
         homeInView={homeInView}
         aboutInView={aboutInView}
         projectsInView={projectsInView}
       />
+      <Home homeRef={homeRef} />
       <AboutMe aboutRef={aboutRef} />
       <MyProjects projectsRef={projectsRef} />
       <Footer />
