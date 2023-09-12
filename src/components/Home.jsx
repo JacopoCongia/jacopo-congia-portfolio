@@ -18,18 +18,6 @@ function Home({ homeRef }) {
           Start Exploring
         </a>
       </div>
-      {/* <ul className="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul> */}
     </section>
   );
 }
