@@ -1,40 +1,30 @@
 function Navbar({ homeInView, aboutInView, projectsInView }) {
   return (
-    <nav
-      className="sticky z-50 top-0 drop-shadow-md backdrop-blur-md
-
-    bg-[#2c2c2c]/[90%] py-[1.1em] px-[1em] font-medium text-[0.9rem] min-[700px]:pr-[2em] min-[700px]:text-[1rem]"
-    >
-      <ul className="flex gap-[2.5em] text-neutral-200 justify-center min-[700px]:justify-end">
-        <li>
-          <a
-            href="#home"
-            className={`hover:text-orange-500 ${
-              homeInView && "text-orange-500"
-            }`}
-          >
-            Home
-          </a>
+    <nav className="sticky h-[60px] justify-center flex min-[700px]:justify-end z-50 top-0 shadow-md backdrop-blur-sm bg-orange-500/[85%] px-[1em] font-medium text-[0.9rem] min-[700px]:pr-[2em] min-[700px]:text-[1rem]">
+      <ul className="flex text-neutral-200">
+        <li
+          className={`h-[100%] hover:border-b-[8px] hover:border-b-orange-600 px-[1em] flex items-center hover:bg-neutral-200 hover:text-orange-500 hover:pt-[8px] ${
+            homeInView &&
+            "bg-neutral-200 text-orange-500 border-b-[8px] pt-[8px] border-b-orange-600"
+          }`}
+        >
+          <a href="#home">Home</a>
         </li>
-        <li>
-          <a
-            href="#about"
-            className={`hover:text-orange-500 ${
-              aboutInView && "text-orange-500"
-            }`}
-          >
-            About
-          </a>
+        <li
+          className={`h-[100%] hover:border-b-[8px] hover:border-b-orange-600 px-[1em] flex items-center hover:bg-neutral-200 hover:text-orange-500 hover:pt-[8px] ${
+            aboutInView &&
+            "bg-neutral-200 text-orange-500 border-b-[8px] pt-[8px] border-b-orange-600"
+          }`}
+        >
+          <a href="#about">About</a>
         </li>
-        <li>
-          <a
-            href="#myprojects"
-            className={`hover:text-orange-500 ${
-              projectsInView && "text-orange-500"
-            }`}
-          >
-            My Projects
-          </a>
+        <li
+          className={`h-[100%] hover:border-b-[8px] hover:border-b-orange-600 px-[1em] flex items-center hover:bg-neutral-200 hover:text-orange-500 hover:pt-[8px] ${
+            projectsInView &&
+            "bg-neutral-200 text-orange-500 border-b-[8px] pt-[8px] border-b-orange-600"
+          }`}
+        >
+          <a href="#myprojects">My Projects</a>
         </li>
       </ul>
     </nav>

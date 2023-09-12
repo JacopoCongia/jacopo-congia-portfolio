@@ -12,14 +12,20 @@ function App() {
 
   return (
     <div>
-      <Home homeRef={homeRef} />
       <Navbar
         homeInView={homeInView}
         aboutInView={aboutInView}
         projectsInView={projectsInView}
       />
-      <AboutMe aboutRef={aboutRef} />
-      <MyProjects projectsRef={projectsRef} />
+      <Home homeRef={homeRef} />
+      <AboutMe
+        aboutRef={aboutRef}
+        aboutInView={aboutInView}
+      />
+      <MyProjects
+        projectsRef={projectsRef}
+        projectsInView={projectsInView}
+      />
       <Footer />
     </div>
   );
