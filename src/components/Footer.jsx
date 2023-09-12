@@ -3,7 +3,7 @@ import { IoIosArrowUp } from "react-icons/io";
 
 function Footer() {
   return (
-    <footer className="relative flex flex-col bg-neutral-700 items-center gap-[3em] text-neutral-200 py-[3em] text-center">
+    <footer className="relative flex flex-col bg-neutral-800 items-center gap-[3em] text-neutral-200 py-[3em] text-center">
       <div className="flex gap-[25px] text-[50px]">
         <a
           href="https://github.com/JacopoCongia"

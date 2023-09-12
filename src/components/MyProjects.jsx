@@ -1,4 +1,4 @@
-function MyProjects({ projectsRef }) {
+function MyProjects({ projectsRef, projectsInView }) {
   const data = [
     {
       name: "Final Fantasy XIV Relic Weapons",
@@ -115,16 +115,22 @@ function MyProjects({ projectsRef }) {
   });
 
   return (
-    <section
-      ref={projectsRef}
-      id="myprojects"
-      className="relative pt-[100px] pb-[100px] bg-neutral-200 text-neutral-800 px-[2em] flex flex-col items-center justify-center gap-[3em] text-[1.1rem] text-center text-neutral-200  min-[1200px]:px-[10em] min-[1200px]:pt-[150px]"
-    >
-      <h1 className="text-[1.9rem] font-bold min-[800px]:text-[2.5rem] border-l-[0.2em] pl-[0.5em] border-l-orange-500 min-[1200px]:self-start min-[1200px]:mb-[1.5em]">
-        My Projects
-      </h1>
-      <div className="flex flex-col gap-[5em] justify-center">{projectsEl}</div>
-    </section>
+    <div className="bg-neutral-200">
+      <section
+        ref={projectsRef}
+        id="myprojects"
+        className={`relative pt-[100px] pb-[100px] bg-neutral-200 text-neutral-800 px-[2em] flex flex-col items-center justify-center gap-[3em] text-[1.1rem] text-center text-neutral-200 min-[1200px]:px-[10em] min-[1200px]:pt-[150px] duration-[0.3s] opacity-0 ${
+          projectsInView && "opacity-100"
+        }`}
+      >
+        <h1 className="text-[1.9rem] font-bold min-[800px]:text-[2.5rem] border-l-[0.2em] pl-[0.5em] border-l-orange-500 min-[1200px]:self-start min-[1200px]:mb-[1.5em]">
+          My Projects
+        </h1>
+        <div className="flex flex-col gap-[5em] justify-center">
+          {projectsEl}
+        </div>
+      </section>
+    </div>
   );
 }
 
