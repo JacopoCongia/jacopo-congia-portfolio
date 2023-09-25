@@ -7,7 +7,7 @@ function Home({ homeRef }) {
     >
       <div className="text-[2rem] tracking-wide font-[400] max-w-[80%] text-center min-[800px]:text-[3.5rem]">
         <h1>
-          Hello, I&apos;m{" "}
+          Hi, I&apos;m{" "}
           <span className="text-orange-500 font-[500]">Jacopo</span>.
         </h1>
         <h1 className="mb-[1.5em]">I&apos;m a Front-end developer.</h1>
