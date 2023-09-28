@@ -10,9 +10,9 @@ function AboutMe({ aboutRef, aboutInView }) {
           aboutInView && "opacity-100"
         }`}
       >
-        <div className="flex flex-col min-[1200px]:flex-row min-[1200px]:items-start min-[1200px]:px-[10em]">
+        <div className="flex flex-col min-[1200px]:flex-row min-[1200px]:items-start min-[1200px]:px-[10em] min-[1200px]:gap-[3em] min-[1200px]:justify-center">
           <div
-            className={`flex flex-col items-center gap-[4em] min-[1200px]:max-w-[50%]`}
+            className={`flex flex-col items-center gap-[4em] min-[1400px]:max-w-[35%]`}
           >
             <h1 className="text-[1.9rem] font-bold border-l-[0.2em] pl-[0.5em] border-l-orange-500 min-[800px]:text-[2.5rem] min-[1200px]:self-start">
               About Me
