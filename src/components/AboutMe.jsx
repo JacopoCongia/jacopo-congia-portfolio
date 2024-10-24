@@ -30,7 +30,7 @@ function AboutMe({ aboutRef, aboutInView }) {
               <span className="font-semibold">React.js</span>, and it opened my
               eyes to a whole new world. I love learning about new things, and
               the possibilities in this field are endless. Outside of coding, I
-              enjoy powerlifting, playing video games, taking pictures and
+              enjoy inline skating, playing video games, taking pictures and
               another never-ending learning endeavor: cooking.
             </p>
           </div>
