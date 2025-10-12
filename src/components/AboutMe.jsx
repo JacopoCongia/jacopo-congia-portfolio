@@ -18,10 +18,10 @@ function AboutMe({ aboutRef, aboutInView }) {
               About Me
             </h1>
             <img
-              src="/avatar.jpeg"
+              src="/profile_picture_small.png"
               className="w-[180px] border-[5px] border-orange-500 rounded-[50%] mb-[-25px]"
             />
-            <p className="mb-[3em] leading-[1.6em] min-[800px]:max-w-[66%] min-[1200px]:max-w-[100%] min-[1400px]:max-w-[100%]">
+            <p className="mb-[3em] leading-[1.9em] min-[800px]:max-w-[66%] min-[1200px]:max-w-[100%] min-[1400px]:max-w-[100%]">
               With a background in{" "}
               <span className="font-semibold">Photography</span> and{" "}
               <span className="font-semibold">Photo Editing</span>, I started my
