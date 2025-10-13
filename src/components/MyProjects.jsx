@@ -1,6 +1,15 @@
 function MyProjects({ projectsRef, projectsInView }) {
   const data = [
     {
+      name: "Wedding Website with RSVP",
+      description:
+        "A wedding website with RSVP functionality built in React.js and Tailwindcss. Data is stored in a database powered by Supabase.",
+      image: "/wedding-website.png",
+      gitHub: "https://github.com/JacopoCongia/wedding-invitation-public",
+      liveVersion: "https://rsvp-wedding-invitation.netlify.app/",
+      reversed: true,
+    },
+    {
       name: "Final Fantasy XIV Relic Weapons",
       description:
         "An app to track your Final Fantasy XIV Relic Weapons built in React.js, Tailwindcss and with an account system and database powered by Firebase.",
@@ -58,7 +67,7 @@ function MyProjects({ projectsRef, projectsInView }) {
                 href={project.gitHub}
                 target="_blank"
                 rel="noreferrer"
-                className="border-[2px] border-neutral-800 text-neutral-800 flex items-center justify-center py-[0.6em] duration-[0.2s] text-neutral-200 font-semibold hover:text-orange-500 hover:border-orange-500 min-[1200px]:w-[50%]"
+                className="border-[2px] border-neutral-800 text-neutral-800 flex items-center justify-center py-[0.6em] duration-[0.2s] font-semibold hover:text-orange-500 hover:border-orange-500 min-[1200px]:w-[50%]"
               >
                 GitHub
               </a>

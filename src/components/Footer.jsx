@@ -45,7 +45,7 @@ function Footer() {
       </div>
       <a
         href="#home"
-        className="absolute top-0 right-[25px] rounded-[50%] translate-y-[-50%] p-[8px] text-[1.6rem] bg-orange-500 text-neutral-200 font-bold hover:bg-orange-500 hover:cursor-pointer hover:text-neutral-200 hover:text-[2rem] hover:right-[22px] duration-[0.1s] min-[800px]:right-[35px] min-[800px]:p-[12px] min-[800px]:text-[1.8rem] min-[800px]:hover:text-[2.2rem] min-[800px]:hover:right-[32px]"
+        className="absolute select-none top-0 right-[25px] rounded-[50%] translate-y-[-50%] p-[8px] text-[1.6rem] bg-orange-500 text-neutral-200 font-bold hover:bg-orange-500 hover:cursor-pointer hover:text-neutral-200 hover:text-[2rem] hover:right-[22px] duration-[0.1s] min-[800px]:right-[35px] min-[800px]:p-[12px] min-[800px]:text-[1.8rem] min-[800px]:hover:text-[2.2rem] min-[800px]:hover:right-[32px]"
       >
         <IoIosArrowUp />
       </a>
