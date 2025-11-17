@@ -59,7 +59,7 @@ function MyProjects({ projectsRef, projectsInView }) {
                 href={project.liveVersion}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center py-[0.6em] duration-[0.2s] bg-neutral-800 text-neutral-200 font-semibold font-shadow-sm hover:text-neutral-200 hover:bg-orange-500 min-[1200px]:w-[50%]"
+                className="flex items-center justify-center py-[0.6em] duration-[0.2s] bg-retro-brown text-neutral-200 font-semibold font-shadow-sm hover:text-retro-brown hover:bg-retro-yellow min-[1200px]:w-[50%]"
               >
                 Live Version
               </a>
@@ -67,7 +67,7 @@ function MyProjects({ projectsRef, projectsInView }) {
                 href={project.gitHub}
                 target="_blank"
                 rel="noreferrer"
-                className="border-[2px] border-neutral-800 text-neutral-800 flex items-center justify-center py-[0.6em] duration-[0.2s] font-semibold hover:text-orange-500 hover:border-orange-500 min-[1200px]:w-[50%]"
+                className="border-[2px] border-neutral-800 text-neutral-800 flex items-center justify-center py-[0.6em] duration-[0.2s] font-semibold hover:text-retro-yellow hover:border-retro-yellow min-[1200px]:w-[50%]"
               >
                 GitHub
               </a>
@@ -100,7 +100,7 @@ function MyProjects({ projectsRef, projectsInView }) {
                 href={project.liveVersion}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center py-[0.6em] duration-[0.2s] bg-neutral-800 text-neutral-200 font-semibold font-shadow-sm hover:text-neutral-200 hover:bg-orange-500 min-[1200px]:w-[50%]"
+                className="flex items-center justify-center py-[0.6em] duration-[0.2s] bg-retro-brown text-neutral-200 font-semibold font-shadow-sm hover:text-retro-brown hover:bg-retro-yellow min-[1200px]:w-[50%]"
               >
                 Live Version
               </a>
@@ -108,7 +108,7 @@ function MyProjects({ projectsRef, projectsInView }) {
                 href={project.gitHub}
                 target="_blank"
                 rel="noreferrer"
-                className="border-[2px] border-neutral-800 text-neutral-800 flex items-center justify-center py-[0.6em] duration-[0.2s] text-neutral-200 font-semibold hover:text-orange-500 hover:border-orange-500 min-[1200px]:w-[50%]"
+                className="border-[2px] border-neutral-800 text-neutral-800 flex items-center justify-center py-[0.6em] duration-[0.2s] font-semibold hover:text-retro-yellow hover:border-retro-yellow min-[1200px]:w-[50%]"
               >
                 GitHub
               </a>
@@ -124,15 +124,16 @@ function MyProjects({ projectsRef, projectsInView }) {
   });
 
   return (
-    <div className="bg-neutral-200">
+    <div className="bg-retro-cream">
       <section
         ref={projectsRef}
         id="myprojects"
-        className={`relative pt-[100px] pb-[100px] bg-neutral-200 text-neutral-800 px-[2em] flex flex-col items-center justify-center gap-[3em] text-[1.1rem] text-center text-neutral-200 min-[1200px]:px-[10em] min-[1200px]:pt-[150px] duration-[0.3s] opacity-0 ${
+        className={`relative pt-[100px] pb-[100px] bg-retro-cream text-retro-brown px-[2em] flex flex-col items-center justify-center gap-[3em] text-[1.1rem] text-center min-[1200px]:px-[10em] min-[1200px]:pt-[150px] duration-[0.3s] opacity-0 ${
           projectsInView && "opacity-100"
         }`}
       >
-        <h1 className="text-[1.9rem] font-bold min-[800px]:text-[2.5rem] border-l-[0.2em] pl-[0.5em] border-l-orange-500 min-[1200px]:self-start min-[1200px]:mb-[1.5em]">
+        <h1 className="text-[2.4rem] font-shrikhand border-l-[0.2em] pl-[0.5em] border-l-retro-yellow min-[800px]:text-[3.2rem] min-[1200px]:self-start">
+          {" "}
           My Projects
         </h1>
         <div className="flex flex-col gap-[5em] justify-center">
