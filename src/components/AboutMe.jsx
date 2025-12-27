@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import Skills from "./Skills";
 
 function AboutMe({ aboutRef, aboutInView }) {
@@ -6,20 +7,25 @@ function AboutMe({ aboutRef, aboutInView }) {
       <section
         ref={aboutRef}
         id="about"
-        className={`min-h-[100vh] flex flex-col items-center justify-center mx-auto gap-[10%] pt-[100px] pb-[70px] px-[3em] text-[1.1rem] text-center text-retro-cream bg-retro-brown duration-[0.3s] opacity-0 ${
-          aboutInView && "opacity-100"
-        }`}
+        className={`mx-auto flex min-h-[100vh] scroll-mt-[60px] flex-col items-center justify-center gap-[10%] bg-retro-brown px-[3em] pb-[6em] pt-[4em] text-center text-[1.1rem] text-retro-cream`}
       >
-        <div className="flex flex-col min-[1200px]:flex-row min-[1200px]:items-start min-[1200px]:px-[10em] min-[1200px]:gap-[5em] min-[1200px]:justify-center">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ margin: "-100px" }} // Trigger when 100px into view
+          className="flex flex-col min-[1200px]:flex-row min-[1200px]:items-start min-[1200px]:justify-center min-[1200px]:gap-[5em] min-[1200px]:px-[10em]"
+        >
           <div
             className={`flex flex-col items-center gap-[4em] min-[1400px]:max-w-[35%]`}
           >
-            <h1 className="text-[2.4rem] whitespace-nowrap font-shrikhand border-l-[0.2em] pl-[0.5em] border-l-retro-yellow min-[800px]:text-[3.2rem] min-[1200px]:self-start">
+            <h1 className="whitespace-nowrap border-l-[0.2em] border-l-retro-yellow pl-[0.5em] font-shrikhand text-[2.4rem] min-[800px]:text-[3.2rem] min-[1200px]:self-start">
               About Me
             </h1>
             <img
               src="/profile_picture_small.png"
-              className="w-[180px] border-[5px] border-retro-yellow rounded-[50%] mb-[-25px]"
+              className="mb-[-25px] w-[180px] rounded-[50%] border-[5px] border-retro-yellow"
+              alt="profile picture"
             />
             <p className="mb-[3em] leading-[1.9em] min-[800px]:max-w-[66%] min-[1200px]:max-w-[100%] min-[1400px]:max-w-[100%]">
               With a background in{" "}
@@ -42,7 +48,7 @@ function AboutMe({ aboutRef, aboutInView }) {
           </div>
 
           <Skills />
-        </div>
+        </motion.div>
       </section>
     </div>
   );

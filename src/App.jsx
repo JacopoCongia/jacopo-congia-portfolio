@@ -18,14 +18,8 @@ function App() {
         projectsInView={projectsInView}
       />
       <Home homeRef={homeRef} />
-      <AboutMe
-        aboutRef={aboutRef}
-        aboutInView={aboutInView}
-      />
-      <MyProjects
-        projectsRef={projectsRef}
-        projectsInView={projectsInView}
-      />
+      <AboutMe aboutRef={aboutRef} aboutInView={aboutInView} />
+      <MyProjects projectsRef={projectsRef} projectsInView={projectsInView} />
       <Footer />
     </div>
   );

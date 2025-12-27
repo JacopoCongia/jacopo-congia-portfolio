@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 function MyProjects({ projectsRef, projectsInView }) {
   const data = [
     {
@@ -38,105 +40,74 @@ function MyProjects({ projectsRef, projectsInView }) {
     },
   ];
 
-  const projectsEl = data.map((project) => {
-    if (!project.reversed) {
-      return (
-        <article
-          key={project.name}
-          className="flex flex-col items-center m-auto gap-[2.5em] min-[1200px]:flex-row min-[1200px]:max-w-[100%] min-[1200px]:text-right min-[1200px]:items-start min-[1200px]:gap-[3em]"
-        >
-          <div className="max-w-[80%]">
-            <div className="min-[1200px]:max-w-[100%]">
-              <h1 className="font-semibold text-[1.4rem] min-[750px]:text-[1.8rem] pb-[0.5em]">
-                {project.name}
-              </h1>
-              <p className="text-[0.9rem] min-[750px]:text-[1.2rem]">
-                {project.description}
-              </p>
-            </div>
-            <div className="flex flex-col gap-[1em] text-center mt-[2em] min-[1200px]:flex-row min-[1200px]:justify-end">
-              <a
-                href={project.liveVersion}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center py-[0.6em] duration-[0.2s] bg-retro-brown text-neutral-200 font-semibold font-shadow-sm hover:text-retro-brown hover:bg-retro-yellow min-[1200px]:w-[50%]"
-              >
-                Live Version
-              </a>
-              <a
-                href={project.gitHub}
-                target="_blank"
-                rel="noreferrer"
-                className="border-[2px] border-neutral-800 text-neutral-800 flex items-center justify-center py-[0.6em] duration-[0.2s] font-semibold hover:text-retro-yellow hover:border-retro-yellow min-[1200px]:w-[50%]"
-              >
-                GitHub
-              </a>
-            </div>
-          </div>
+  const projectsEl = data.map((project, index) => {
+    const cardVariants = {
+      hidden: { opacity: 0, x: project.reversed ? -50 : 50 },
+      visible: { opacity: 1, x: 0 },
+    };
 
-          <img
-            src={project.image}
-            className="max-w-[80%] min-[1200px]:max-w-[50%]"
-          />
-        </article>
-      );
-    } else {
-      return (
-        <article
-          key={project.name}
-          className="flex flex-col items-center m-auto gap-[2.5em] min-[1200px]:flex-row-reverse min-[1200px]:max-w-[100%] min-[1200px]:text-left min-[1200px]:items-start min-[1200px]:gap-[3em]"
-        >
-          <div className="max-w-[80%]">
-            <div className="min-[1200px]:max-w-[100%]">
-              <h1 className="font-semibold text-[1.4rem] min-[750px]:text-[1.8rem] pb-[0.5em]">
-                {project.name}
-              </h1>
-              <p className="text-[0.9rem] min-[750px]:text-[1.2rem]">
-                {project.description}
-              </p>
-            </div>
-            <div className="flex flex-col gap-[1em] text-center mt-[2em] min-[1200px]:flex-row min-[1200px]:justify-start">
-              <a
-                href={project.liveVersion}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center py-[0.6em] duration-[0.2s] bg-retro-brown text-neutral-200 font-semibold font-shadow-sm hover:text-retro-brown hover:bg-retro-yellow min-[1200px]:w-[50%]"
-              >
-                Live Version
-              </a>
-              <a
-                href={project.gitHub}
-                target="_blank"
-                rel="noreferrer"
-                className="border-[2px] border-neutral-800 text-neutral-800 flex items-center justify-center py-[0.6em] duration-[0.2s] font-semibold hover:text-retro-yellow hover:border-retro-yellow min-[1200px]:w-[50%]"
-              >
-                GitHub
-              </a>
-            </div>
+    return (
+      <motion.article
+        key={project.name}
+        variants={cardVariants} // Use variants for cleaner stagger logic
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ margin: "-50px" }}
+        transition={{ duration: 0.7, delay: index * 0.2 }} // Stagger delay based on index
+        className={`m-auto flex flex-col items-center gap-[2.5em] ${
+          !project.reversed
+            ? "min-[1200px]:flex-row min-[1200px]:items-start min-[1200px]:text-right"
+            : "min-[1200px]:flex-row-reverse min-[1200px]:items-start min-[1200px]:text-left"
+        } min-[1200px]:max-w-[100%] min-[1200px]:gap-[3em]`}
+      >
+        <div className="max-w-[80%]">
+          <div className="min-[1200px]:max-w-[100%]">
+            <h1 className="pb-[0.5em] text-[1.4rem] font-semibold min-[750px]:text-[1.8rem]">
+              {project.name}
+            </h1>
+            <p className="text-[0.9rem] min-[750px]:text-[1.2rem]">
+              {project.description}
+            </p>
           </div>
-          <img
-            src={project.image}
-            className="max-w-[80%] min-[1200px]:max-w-[50%]"
-          />
-        </article>
-      );
-    }
+          <div className="mt-[2em] flex flex-col gap-[1em] text-center min-[1200px]:flex-row min-[1200px]:justify-end">
+            <a
+              href={project.liveVersion}
+              target="_blank"
+              rel="noreferrer"
+              className="font-shadow-sm flex items-center justify-center bg-retro-brown py-[0.6em] font-semibold text-neutral-200 duration-[0.2s] hover:bg-retro-yellow hover:text-retro-brown min-[1200px]:w-[50%]"
+            >
+              Live Version
+            </a>
+            <a
+              href={project.gitHub}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center border-[2px] border-neutral-800 py-[0.6em] font-semibold text-neutral-800 duration-[0.2s] hover:border-retro-yellow hover:text-retro-yellow min-[1200px]:w-[50%]"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <img
+          src={project.image}
+          className="max-w-[80%] min-[1200px]:max-w-[50%]"
+        />
+      </motion.article>
+    );
   });
-
   return (
     <div className="bg-retro-cream">
       <section
         ref={projectsRef}
         id="myprojects"
-        className={`relative pt-[100px] pb-[100px] bg-retro-cream text-retro-brown px-[2em] flex flex-col items-center justify-center gap-[3em] text-[1.1rem] text-center min-[1200px]:px-[10em] min-[1200px]:pt-[150px] duration-[0.3s] opacity-0 ${
-          projectsInView && "opacity-100"
-        }`}
+        className={`relative flex flex-col items-center justify-center gap-[3em] bg-retro-cream px-[2em] pb-[100px] pt-[100px] text-center text-[1.1rem] text-retro-brown min-[1200px]:px-[10em] min-[1200px]:pt-[150px]`}
       >
-        <h1 className="text-[2.4rem] font-shrikhand border-l-[0.2em] pl-[0.5em] border-l-retro-yellow min-[800px]:text-[3.2rem] min-[1200px]:self-start">
+        <h1 className="border-l-[0.2em] border-l-retro-yellow pl-[0.5em] font-shrikhand text-[2.4rem] min-[800px]:text-[3.2rem] min-[1200px]:self-start">
           {" "}
           My Projects
         </h1>
-        <div className="flex flex-col gap-[5em] justify-center">
+        <div className="flex flex-col justify-center gap-[5em]">
           {projectsEl}
         </div>
       </section>
