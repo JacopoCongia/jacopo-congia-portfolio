@@ -97,7 +97,7 @@ function MyProjects({ projectsRef, projectsInView }) {
     );
   });
   return (
-    <div className="bg-retro-cream">
+    <div className="overflow-x-hidden bg-retro-cream">
       <section
         ref={projectsRef}
         id="myprojects"

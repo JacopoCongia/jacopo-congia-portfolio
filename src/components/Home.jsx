@@ -46,7 +46,6 @@ function Home({ homeRef }) {
               scale: [1, 1.02, 1],
             }}
             href="#about"
-            c
             className="inline-block bg-retro-pink px-[1.5em] py-[0.5em] text-[1.4rem] text-retro-cream min-[800px]:text-[1.8rem]"
           >
             Start Exploring

@@ -7,7 +7,7 @@ function Skills() {
       <h1 className="border-l-[0.2em] border-l-retro-yellow pl-[0.5em] font-shrikhand text-[2.4rem] min-[800px]:text-[3.2rem] min-[1200px]:self-start">
         Skills
       </h1>
-      <div className="flex flex-wrap items-center justify-center gap-[2em] px-[3em] min-[1200px]:grid min-[1200px]:min-w-[50%] min-[1200px]:grid-cols-3 min-[1400px]:grid-cols-4">
+      <div className="flex flex-wrap items-center justify-center gap-[2em] min-[1200px]:grid min-[1200px]:min-w-[50%] min-[1200px]:grid-cols-3 min-[1400px]:grid-cols-4">
         {skills.map((skill) => (
           <motion.div
             whileHover={{ y: -10 }}

@@ -8,7 +8,7 @@ function Navbar({ homeInView, aboutInView, projectsInView }) {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 flex h-[60px] select-none justify-center bg-retro-yellow/[95%] px-[1em] text-[0.9rem] font-medium shadow-md backdrop-blur-sm min-[700px]:justify-end min-[700px]:pr-[2em] min-[700px]:text-[1rem]">
+    <nav className="sticky top-0 z-50 flex h-[60px] select-none justify-center bg-retro-yellow/[95%] text-[0.9rem] font-medium shadow-md backdrop-blur-sm min-[700px]:justify-end min-[700px]:pr-[2em] min-[700px]:text-[1rem]">
       <ul className="flex text-retro-cream">
         {navItems.map((item) => (
           <li
