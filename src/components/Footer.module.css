@@ -1,0 +1,83 @@
+.footer {
+  display: flex;
+
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  container-type: inline-size;
+  background-color: var(--retro-brown);
+  padding: 3em 0;
+  color: var(--retro-cream);
+  text-align: center;
+}
+
+.socialList {
+  display: flex;
+  gap: 0.8em;
+  font-size: 50px;
+  list-style: none;
+}
+
+.socialLink {
+  display: inline-flex;
+  transition: all 0.2s ease;
+  fill: var(--retro-cream);
+  color: var(--retro-cream);
+
+  &:hover {
+    fill: var(--retro-yellow);
+    color: var(--retro-yellow);
+  }
+}
+
+.backToTop {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  transition: all 0.1s ease;
+  border-radius: 50%;
+  background-color: var(--retro-yellow);
+  padding: 8px;
+  color: var(--retro-brown);
+  font-weight: bold;
+  font-size: 1.6rem;
+  user-select: none;
+
+  &:hover {
+    right: 22px;
+    color: var(--retro-cream);
+    font-size: 2rem;
+  }
+
+  @container (min-width: 800px) {
+    right: 35px;
+    padding: 12px;
+    font-size: 1.8rem;
+
+    &:hover {
+      right: 32px;
+      font-size: 2.2rem;
+    }
+  }
+}
+
+.copyright {
+  display: flex;
+  position: absolute;
+  right: 8px;
+  bottom: 4px;
+  gap: 0.5em;
+  padding-top: 3em;
+
+  color: color-mix(in srgb, var(--retro-cream) 70%, transparent);
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+
+  @container (min-width: 800px) {
+    font-size: 0.8rem;
+  }
+}

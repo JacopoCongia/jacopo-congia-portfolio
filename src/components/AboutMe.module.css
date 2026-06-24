@@ -1,0 +1,101 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  container-type: inline-size; /* Enable container queries */
+  margin: 0 auto;
+  background-color: var(--retro-brown);
+  padding: 4em 3em 6em 3em;
+  min-height: 100vh;
+  scroll-margin-top: 60px; /* Keeps the navbar from covering the section */
+  color: var(--retro-cream);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container query for large screens */
+@container (min-width: 1200px) {
+  .contentContainer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5em;
+    padding: 0 10em;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4em;
+}
+
+/* Container query for very large screens */
+@container (min-width: 1400px) {
+  .textContainer {
+    max-width: 35%;
+  }
+}
+
+.heading {
+  border-left: 0.2em solid var(--retro-yellow);
+  padding-left: 0.5em;
+  font-size: 2.4rem;
+  font-family: "Shrikhand", cursive;
+  white-space: nowrap;
+}
+
+/* Container query for medium screens */
+@container (min-width: 800px) {
+  .heading {
+    font-size: 3.2rem;
+  }
+}
+
+@container (min-width: 1200px) {
+  .heading {
+    align-self: flex-start;
+  }
+}
+
+.profileImage {
+  margin-bottom: -25px;
+  border: 5px solid var(--retro-yellow);
+  border-radius: 50%;
+  width: 180px;
+}
+
+.paragraph {
+  margin-bottom: 3em;
+  line-height: 1.9em;
+}
+
+@container (min-width: 800px) {
+  .paragraph {
+    max-width: 66%;
+  }
+}
+
+@container (min-width: 1200px) {
+  .paragraph {
+    max-width: 100%;
+  }
+}
+
+.highlightMint {
+  color: var(--retro-mint);
+  font-weight: 600;
+}
+
+.highlightPink {
+  color: var(--retro-pink);
+  font-weight: 600;
+}

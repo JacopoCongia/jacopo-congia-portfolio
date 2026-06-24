@@ -1,0 +1,168 @@
+.wrapper {
+  background-color: var(--retro-cream);
+  overflow-x: hidden;
+}
+
+.section {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  container-type: inline-size;
+  padding: 100px 2em;
+  color: var(--retro-brown);
+  font-size: 1.1rem;
+  text-align: center;
+
+  /* since it's a container itself I have to use a media query */
+  @media (min-width: 1200px) {
+    padding: 150px 10em;
+  }
+}
+
+.sectionHeading {
+  border-left: 0.2em solid var(--retro-yellow);
+  padding-left: 0.5em;
+  font-size: 2.4rem;
+  font-family: "Shrikhand", cursive;
+
+  @container (min-width: 800px) {
+    font-size: 3.2rem;
+  }
+  @container (min-width: 850px) {
+    align-self: flex-start;
+  }
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  width: 100%;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5em;
+  margin: 0 auto;
+  width: 100%;
+
+  @container (min-width: 850px) {
+    gap: 3em;
+    max-width: 100%;
+  }
+}
+
+/* Standard Card Layout */
+.cardStandard {
+  @container (min-width: 850px) {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: right;
+
+    & .buttonContainer {
+      justify-content: flex-end;
+    }
+  }
+}
+
+/* Reversed Card Layout */
+.cardReversed {
+  @container (min-width: 850px) {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    text-align: left;
+
+    & .buttonContainer {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.textContent {
+  max-width: 80%;
+
+  @container (min-width: 850px) {
+    flex: 1; /* Allows text and image to split available space evenly */
+    max-width: 100%;
+  }
+}
+
+.projectTitle {
+  padding-bottom: 0.5em;
+  font-weight: 600;
+  font-size: 1.4rem;
+
+  @container (min-width: 750px) {
+    font-size: 1.8rem;
+  }
+}
+
+.projectDesc {
+  font-size: 0.9rem;
+
+  @container (min-width: 750px) {
+    font-size: 1.2rem;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 2em;
+  text-align: center;
+
+  @container (min-width: 850px) {
+    flex-direction: row;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  padding: 0.6em;
+  font-weight: 600;
+
+  @container (min-width: 850px) {
+    width: 50%;
+  }
+}
+
+.btnPrimary {
+  background-color: var(--retro-brown);
+  color: var(--retro-cream);
+
+  &:hover {
+    background-color: var(--retro-yellow);
+    color: var(--retro-brown);
+  }
+}
+
+.btnSecondary {
+  border: 0.1em solid var(--retro-brown);
+  color: var(--retro-brown);
+
+  &:hover {
+    border-color: var(--retro-yellow);
+    color: var(--retro-yellow);
+  }
+}
+
+.projectImage {
+  max-width: 80%;
+  height: auto;
+
+  @container (min-width: 850px) {
+    flex: 1;
+    max-width: 50%;
+  }
+}

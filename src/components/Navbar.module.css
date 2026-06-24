@@ -1,0 +1,62 @@
+.nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  background-color: color-mix(in srgb, var(--retro-yellow) 95%, transparent);
+  /* Retro Yellow with 95% opacity */
+  height: 60px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+@media (min-width: 700px) {
+  .nav {
+    justify-content: flex-end;
+    padding-right: 2em;
+    font-size: 1rem;
+  }
+}
+
+.navList {
+  display: flex;
+  height: 100%;
+  color: var(--retro-brown);
+  list-style: none;
+}
+
+.navItem {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 0 1em;
+  height: 100%;
+}
+
+.link {
+  position: relative;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.link:hover:not(.linkActive) {
+  color: var(--retro-cream);
+}
+.linkActive {
+  color: var(--retro-brown);
+}
+
+.activeIndicator {
+  position: absolute;
+  inset: 0;
+  border-bottom: 8px solid var(--retro-pink);
+  background-color: var(--retro-cream);
+}

@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4em;
+}
+
+@container (min-width: 1200px) {
+  .container {
+    min-width: 50%;
+  }
+}
+
+.heading {
+  border-left: 0.2em solid var(--retro-yellow);
+  padding-left: 0.5em;
+  font-size: 2.4rem;
+  font-family: "Shrikhand", cursive;
+}
+
+@container (min-width: 800px) {
+  .heading {
+    font-size: 3.2rem;
+  }
+}
+
+@container (min-width: 1200px) {
+  .heading {
+    align-self: flex-start;
+  }
+}
+
+/* Wrapping flexbox on mobile, grid on desktop */
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  padding: 0;
+  list-style: none; /* since I didn't use it in my reset */
+}
+
+@container (min-width: 1200px) {
+  .skillList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 50%;
+  }
+}
+
+@container (min-width: 1400px) {
+  .skillList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  cursor: default;
+}
