@@ -1,0 +1,50 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -60px;
+  background-color: var(--retro-cream);
+  padding-top: 60px;
+  min-height: 100vh;
+  color: var(--retro-brown);
+  user-select: none;
+}
+
+.headerContainer {
+  max-width: 80%;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 0.025em;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  .headerContainer {
+    font-size: 3.5rem;
+  }
+}
+
+.highlight {
+  color: var(--retro-pink);
+  font-weight: 500;
+}
+
+.subtitle {
+  margin-bottom: 1.5em;
+}
+
+.linkButton {
+  display: inline-block;
+  background-color: var(--retro-pink);
+  padding: 0.5em 1.5em;
+  color: var(--retro-cream);
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+@media (min-width: 800px) {
+  .linkButton {
+    font-size: 1.8rem;
+  }
+}

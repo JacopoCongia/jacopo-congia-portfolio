@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
+import styles from "./MyProjects.module.css";
 
-function MyProjects({ projectsRef, projectsInView }) {
+function MyProjects({ projectsRef }) {
   const data = [
     {
       name: "Wedding Website with RSVP",
@@ -42,7 +43,7 @@ function MyProjects({ projectsRef, projectsInView }) {
 
   const projectsEl = data.map((project, index) => {
     const cardVariants = {
-      hidden: { opacity: 0, x: project.reversed ? -50 : 50 },
+      hidden: { opacity: 0, x: project.reversed ? -15 : 15 },
       visible: { opacity: 1, x: 0 },
     };
 
@@ -52,29 +53,23 @@ function MyProjects({ projectsRef, projectsInView }) {
         variants={cardVariants} // Use variants for cleaner stagger logic
         initial="hidden"
         whileInView="visible"
-        viewport={{ margin: "-50px" }}
-        transition={{ duration: 0.7, delay: index * 0.2 }} // Stagger delay based on index
-        className={`m-auto flex flex-col items-center gap-[2.5em] ${
-          !project.reversed
-            ? "min-[1200px]:flex-row min-[1200px]:items-start min-[1200px]:text-right"
-            : "min-[1200px]:flex-row-reverse min-[1200px]:items-start min-[1200px]:text-left"
-        } min-[1200px]:max-w-[100%] min-[1200px]:gap-[3em]`}
+        viewport={{ margin: "-15px" }}
+        transition={{ duration: 0.5, delay: index * 0.1 }} // Stagger delay based on index
+        className={`${styles.projectCard} ${
+          project.reversed ? styles.cardReversed : styles.cardStandard
+        }`}
       >
-        <div className="max-w-[80%]">
-          <div className="min-[1200px]:max-w-[100%]">
-            <h1 className="pb-[0.5em] text-[1.4rem] font-semibold min-[750px]:text-[1.8rem]">
-              {project.name}
-            </h1>
-            <p className="text-[0.9rem] min-[750px]:text-[1.2rem]">
-              {project.description}
-            </p>
+        <div className={styles.textContent}>
+          <div>
+            <h3 className={styles.projectTitle}>{project.name}</h3>
+            <p className={styles.projectDesc}>{project.description}</p>
           </div>
-          <div className="mt-[2em] flex flex-col gap-[1em] text-center min-[1200px]:flex-row min-[1200px]:justify-end">
+          <div className={styles.buttonContainer}>
             <a
               href={project.liveVersion}
               target="_blank"
               rel="noreferrer"
-              className="font-shadow-sm flex items-center justify-center bg-retro-brown py-[0.6em] font-semibold text-neutral-200 duration-[0.2s] hover:bg-retro-yellow hover:text-retro-brown min-[1200px]:w-[50%]"
+              className={`${styles.btn} ${styles.btnPrimary}`}
             >
               Live Version
             </a>
@@ -82,7 +77,7 @@ function MyProjects({ projectsRef, projectsInView }) {
               href={project.gitHub}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center border-[2px] border-neutral-800 py-[0.6em] font-semibold text-neutral-800 duration-[0.2s] hover:border-retro-yellow hover:text-retro-yellow min-[1200px]:w-[50%]"
+              className={`${styles.btn} ${styles.btnSecondary}`}
             >
               GitHub
             </a>
@@ -91,25 +86,17 @@ function MyProjects({ projectsRef, projectsInView }) {
 
         <img
           src={project.image}
-          className="max-w-[80%] min-[1200px]:max-w-[50%]"
+          className={styles.projectImage}
+          alt={`Screenshot of ${project.name} app`}
         />
       </motion.article>
     );
   });
   return (
-    <div className="overflow-x-hidden bg-retro-cream">
-      <section
-        ref={projectsRef}
-        id="myprojects"
-        className={`relative flex flex-col items-center justify-center gap-[3em] bg-retro-cream px-[2em] pb-[100px] pt-[100px] text-center text-[1.1rem] text-retro-brown min-[1200px]:px-[10em] min-[1200px]:pt-[150px]`}
-      >
-        <h1 className="border-l-[0.2em] border-l-retro-yellow pl-[0.5em] font-shrikhand text-[2.4rem] min-[800px]:text-[3.2rem] min-[1200px]:self-start">
-          {" "}
-          My Projects
-        </h1>
-        <div className="flex flex-col justify-center gap-[5em]">
-          {projectsEl}
-        </div>
+    <div className={styles.wrapper}>
+      <section ref={projectsRef} id="myprojects" className={styles.section}>
+        <h2 className={styles.sectionHeading}> My Projects</h2>
+        <div className={styles.projectsContainer}>{projectsEl}</div>
       </section>
     </div>
   );
