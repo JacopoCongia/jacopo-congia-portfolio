@@ -9,7 +9,7 @@ function Skills() {
       <ul className={styles.skillList}>
         {skills.map((skill) => (
           <motion.li
-            whileHover={{ y: -10 }}
+            whileHover={{ y: -3 }}
             transition={{ type: "spring", stiffness: 300 }}
             key={skill.name}
             className={styles.skillItem}

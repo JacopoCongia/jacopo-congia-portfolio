@@ -11,7 +11,7 @@ function AboutMe({ aboutRef }) {
       aria-labelledby="about-heading"
     >
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -15 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ margin: "-100px" }} // Trigger when 100px into view
