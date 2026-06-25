@@ -1,7 +1,32 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 
 function Home({ homeRef }) {
+  // A list of passions to cycle through with an animation effect
+  const passions = [
+    "coding",
+    "learning",
+    "communicating",
+    "animation",
+    "teaching",
+    "solving problems",
+    "designing pretty things",
+  ];
+
+  // State to keep track of the current passion index
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    // Set up an interval to change the passion every 3 seconds
+    const intervalId = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % passions.length);
+    }, 3000);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <section ref={homeRef} id="home" className={styles.section}>
       <div className={styles.headerContainer}>
@@ -12,14 +37,32 @@ function Home({ homeRef }) {
         >
           Hi, I&apos;m <span className={styles.highlight}>Jacopo</span>.
         </motion.h1>
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className={styles.subtitle}
+          transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
+          className={styles.subtitleWrapper}
         >
-          I&apos;m passionate about coding.
-        </motion.h1>
+          <span>I&apos;m passionate about</span>{" "}
+          <span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={index} // The key tells Framer Motion when the text has changed
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200, // Tighter spring for the quick changing words
+                  damping: 12,
+                }}
+                className={styles.dynamicText}
+              >
+                {passions[index]}
+              </motion.span>
+            </AnimatePresence>
+          </span>
+        </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
