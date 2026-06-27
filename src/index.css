@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Quicksand:wght@300..700&display=swap");
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -78,13 +77,15 @@ h6 {
 
 /* End of Josh's Custom CSS Reset */
 
-/* Retro Colors */
+/* Global Colors */
 :root {
   --retro-yellow: #f7b32b;
   --retro-pink: #f79d84;
   --retro-mint: #b7e4c7;
   --retro-cream: #fff8e1;
   --retro-brown: #6b4226;
+  --main-font: "Montserrat", sans-serif;
+  --retro-font: "Shrikhand", cursive;
 }
 
 html {
@@ -93,5 +94,5 @@ html {
 
 body {
   background: #1a1a1a;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--main-font);
 }

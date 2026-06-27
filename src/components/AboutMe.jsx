@@ -33,10 +33,12 @@ function AboutMe({ aboutRef }) {
             started my coding journey by making simple websites, then I moved on
             to <span className={styles.highlightPink}>JavaScript</span> and{" "}
             <span className={styles.highlightPink}>React.js</span>, and it
-            opened my eyes to a whole new world. I love learning about new
-            things, and the possibilities in this field are endless. Outside of
-            coding, I enjoy inline skating, playing video games, taking pictures
-            and another never-ending learning endeavor: cooking.
+            opened my eyes to a whole new world. I firmly believe you can never
+            stop learning.{" "}
+            <span>
+              Outside of technology, I enjoy inline skating, playing video
+              games, taking pictures and cooking.
+            </span>
           </p>
         </div>
         <Skills />

@@ -48,7 +48,7 @@ function MyProjects({ projectsRef }) {
     };
 
     return (
-      <motion.article
+      <motion.section
         key={project.name}
         variants={cardVariants} // Use variants for cleaner stagger logic
         initial="hidden"
@@ -89,7 +89,7 @@ function MyProjects({ projectsRef }) {
           className={styles.projectImage}
           alt={`Screenshot of ${project.name} app`}
         />
-      </motion.article>
+      </motion.section>
     );
   });
   return (
