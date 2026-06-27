@@ -15,7 +15,7 @@ function AboutMe({ aboutRef }) {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ margin: "-100px" }} // Trigger when 100px into view
-        className={styles.contentContainer}
+        className={styles.contentWrapper}
       >
         <div className={styles.textContainer}>
           <h2 id="about-heading" className={styles.heading}>

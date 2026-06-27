@@ -5,10 +5,11 @@
   align-items: center;
   container-type: inline-size;
   margin-top: -4rem;
-  background-color: var(--retro-cream);
+  /* background-color: var(--retro-cream); */
+  background-color: var(--bg-surface);
   padding-top: 4rem;
   min-height: 100vh;
-  color: var(--retro-brown);
+  color: var(--text-primary);
   user-select: none;
 }
 
@@ -16,12 +17,9 @@
   max-width: 80%;
   font-weight: 400;
   font-size: 2rem;
-  letter-spacing: 0.025rem;
   text-align: center;
-}
 
-@container (min-width: 50rem) {
-  .headerContainer {
+  @container (min-width: 50rem) {
     font-size: 2.8rem;
   }
 }
@@ -47,15 +45,13 @@
 
 .linkButton {
   display: inline-block;
-  background-color: var(--retro-pink);
+  background-color: var(--text-accent-secondary);
   padding: 0.5em 1.5em;
   color: var(--retro-cream);
   font-size: 1.4rem;
   text-decoration: none;
-}
 
-@container (min-width: 50rem) {
-  .linkButton {
+  @container (min-width: 50rem) {
     font-size: 1.875rem;
   }
 }

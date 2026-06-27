@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import ThemeToggle from "./ThemeToggle";
 import styles from "./Navbar.module.css";
 
 function Navbar({ homeInView, aboutInView, projectsInView }) {
@@ -10,6 +11,7 @@ function Navbar({ homeInView, aboutInView, projectsInView }) {
 
   return (
     <nav className={styles.nav}>
+      <ThemeToggle />
       <ul className={styles.navList}>
         {navItems.map((item) => (
           <li key={item.id} className={styles.navItem}>

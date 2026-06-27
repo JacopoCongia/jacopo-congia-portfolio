@@ -46,7 +46,7 @@ function Home({ homeRef }) {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeIn" }}
           className={styles.subtitleWrapper}
         >
-          <span>I&apos;m passionate about</span>{" "}
+          <span>I&apos;m passionate about...</span>{" "}
           <div>
             <AnimatePresence mode="wait">
               <motion.span

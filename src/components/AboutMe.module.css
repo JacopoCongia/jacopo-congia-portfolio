@@ -5,23 +5,22 @@
   align-items: center;
   gap: 10%;
   container-type: inline-size; /* Enable container queries */
-  background-color: var(--retro-brown);
+  background-color: var(--bg-surface);
   padding: 4rem 3rem 6rem 3rem;
   min-height: 100vh;
   scroll-margin-top: 4rem; /* Keeps the navbar from covering the section */
-  color: var(--retro-cream);
+  color: var(--text-primary);
   font-size: 1.125rem;
   text-align: center;
 }
 
-.contentContainer {
+.contentWrapper {
   display: flex;
   flex-direction: column;
-}
+  gap: 6rem;
 
-/* Container query for large screens */
-@container (min-width: 70rem) {
-  .contentContainer {
+  /* Container query for large screens */
+  @container (min-width: 70rem) {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
@@ -35,11 +34,9 @@
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-}
 
-/* Container query for very large screens */
-@container (min-width: 80rem) {
-  .textContainer {
+  /* Container query for very large screens */
+  @container (min-width: 80rem) {
     max-width: 35%;
   }
 }
@@ -48,19 +45,13 @@
   border-left: 0.4rem solid var(--retro-yellow);
   padding-left: 1rem;
   font-size: 2.4rem;
-  font-family: "Shrikhand", cursive;
+  font-family: var(--accent-font);
   white-space: nowrap;
-}
 
-/* Container query for medium screens */
-@container (min-width: 50rem) {
-  .heading {
+  @container (min-width: 50rem) {
     font-size: 3.2rem;
   }
-}
-
-@container (min-width: 70rem) {
-  .heading {
+  @container (min-width: 70rem) {
     align-self: flex-start;
   }
 }
@@ -74,27 +65,23 @@
 
 .paragraph {
   margin-bottom: 3rem;
-  line-height: 2;
-}
+  font-weight: 500;
 
-@container (min-width: 50rem) {
-  .paragraph {
+  @container (min-width: 50rem) {
     max-width: 66%;
   }
-}
 
-@container (min-width: 70rem) {
-  .paragraph {
+  @container (min-width: 70rem) {
     max-width: 100%;
   }
 }
 
 .highlightMint {
-  color: var(--retro-mint);
+  color: var(--text-accent-secondary);
   font-weight: 600;
 }
 
 .highlightPink {
-  color: var(--retro-pink);
+  color: var(--text-accent-secondary);
   font-weight: 600;
 }

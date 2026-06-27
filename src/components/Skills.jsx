@@ -4,7 +4,7 @@ import styles from "./Skills.module.css";
 
 function Skills() {
   return (
-    <div className={styles.container}>
+    <div className={styles.skillsWrapper}>
       <h2 className={styles.heading}>Skills</h2>
       <ul className={styles.skillList}>
         {skills.map((skill) => (
