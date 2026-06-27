@@ -1,0 +1,18 @@
+.toggleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: auto;
+  border: none;
+  background: none;
+  padding-left: 2rem;
+
+  color: var(--retro-brown);
+  font-size: clamp(1.2rem, 2cqi, 1.5rem);
+
+  &:hover {
+    transform: rotate(90);
+    color: var(--retro-cream);
+  }
+}

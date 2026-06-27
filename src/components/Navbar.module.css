@@ -15,7 +15,6 @@
   height: 4rem;
   font-weight: 500;
   font-size: 0.875rem;
-  user-select: none;
 }
 
 @media (min-width: 50rem) {
@@ -29,7 +28,6 @@
 .navList {
   display: flex;
   color: var(--retro-brown);
-  list-style: none;
 }
 
 .navItem {

@@ -1,31 +1,21 @@
-.container {
+.skillsWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
 }
 
-@container (min-width: 70rem) {
-  .container {
-    min-width: 50%;
-  }
-}
-
 .heading {
   border-left: 0.4rem solid var(--retro-yellow);
   padding-left: 1rem;
   font-size: 2.4rem;
-  font-family: "Shrikhand", cursive;
-}
+  font-family: var(--accent-font);
+  white-space: nowrap;
 
-@container (min-width: 50rem) {
-  .heading {
+  @container (min-width: 50rem) {
     font-size: 3.2rem;
   }
-}
-
-@container (min-width: 70rem) {
-  .heading {
+  @container (min-width: 70rem) {
     align-self: flex-start;
   }
 }
@@ -38,20 +28,10 @@
   gap: 2.5rem;
   padding: 0;
   list-style: none; /* since I didn't use it in my reset */
-}
 
-@container (min-width: 70rem) {
-  .skillList {
+  @container (min-width: 70rem) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    min-width: 50%;
-  }
-}
-
-@container (min-width: 80rem) {
-  .skillList {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 3.2rem;
   }
 }
 
@@ -61,10 +41,8 @@
   align-items: center;
   gap: 0.5rem;
   width: 4rem;
-}
 
-@container (min-width: 80rem) {
-  .skillItem {
+  @container (min-width: 80rem) {
     width: 4.8rem;
   }
 }

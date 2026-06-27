@@ -83,7 +83,6 @@ function MyProjects({ projectsRef }) {
             </a>
           </div>
         </div>
-
         <img
           src={project.image}
           className={styles.projectImage}
@@ -95,7 +94,7 @@ function MyProjects({ projectsRef }) {
   return (
     <div className={styles.wrapper}>
       <section ref={projectsRef} id="myprojects" className={styles.section}>
-        <h2 className={styles.sectionHeading}> My Projects</h2>
+        <h2 className={styles.heading}> My Projects</h2>
         <div className={styles.projectsContainer}>{projectsEl}</div>
       </section>
     </div>
