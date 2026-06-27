@@ -4,31 +4,30 @@
   top: 0;
   justify-content: center;
   z-index: 50;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
   /* Subtle shadow for depth */
-  background-color: color-mix(in srgb, var(--retro-yellow) 95%, transparent);
-  /* Retro Yellow with 95% opacity */
-  height: 60px;
+  background-color: color-mix(in srgb, var(--retro-yellow) 90%, transparent);
+  /* Retro Yellow with 90% opacity */
+  height: 4rem;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   user-select: none;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 50rem) {
   .nav {
     justify-content: flex-end;
-    padding-right: 2em;
+    padding-right: 2rem;
     font-size: 1rem;
   }
 }
 
 .navList {
   display: flex;
-  height: 100%;
   color: var(--retro-brown);
   list-style: none;
 }
@@ -37,12 +36,10 @@
   display: flex;
   position: relative;
   align-items: center;
-  padding: 0 1em;
-  height: 100%;
+  padding: 0 1rem;
 }
 
 .link {
-  position: relative;
   z-index: 10;
   transition: color 0.3s ease;
 }
@@ -56,7 +53,7 @@
 
 .activeIndicator {
   position: absolute;
-  inset: 0;
-  border-bottom: 8px solid var(--retro-pink);
+  inset: 0; /* inset shorthand for top, right, bottom, left */
+  border-bottom: 0.5rem solid var(--retro-pink);
   background-color: var(--retro-cream);
 }

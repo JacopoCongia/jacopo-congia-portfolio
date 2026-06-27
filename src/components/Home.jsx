@@ -12,6 +12,9 @@ function Home({ homeRef }) {
     "teaching",
     "solving problems",
     "designing pretty things",
+    "photography",
+    "skating",
+    "cooking",
   ];
 
   // State to keep track of the current passion index
@@ -40,11 +43,11 @@ function Home({ homeRef }) {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeIn" }}
           className={styles.subtitleWrapper}
         >
           <span>I&apos;m passionate about</span>{" "}
-          <span>
+          <div>
             <AnimatePresence mode="wait">
               <motion.span
                 key={index} // The key tells Framer Motion when the text has changed
@@ -52,23 +55,26 @@ function Home({ homeRef }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{
-                  type: "spring",
-                  stiffness: 200, // Tighter spring for the quick changing words
-                  damping: 12,
+                  y: {
+                    type: "spring",
+                    stiffness: 200, // Tighter spring for the quick changing words
+                    damping: 10, // Less damping for a snappier exit
+                  },
+                  opacity: { duration: 0.2 }, // Quick fade in/out
                 }}
                 className={styles.dynamicText}
               >
                 {passions[index]}
               </motion.span>
             </AnimatePresence>
-          </span>
+          </div>
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.5,
-            delay: 0.8,
+            duration: 0.8,
+            delay: 1.2,
             type: "spring",
             stiffness: 260,
             damping: 20,
