@@ -1,32 +1,12 @@
-.section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  container-type: inline-size;
-  margin-top: -4rem;
-  /* background-color: var(--retro-cream); */
-  background-color: var(--bg-surface);
-  padding-top: 4rem;
-  min-height: 100vh;
-  color: var(--text-primary);
-  user-select: none;
-}
-
 .headerContainer {
-  max-width: 80%;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: clamp(1.44rem, 1.1329rem + 1.3104cqi, 2.1484rem);
   text-align: center;
-
-  @container (min-width: 50rem) {
-    font-size: 2.8rem;
-  }
 }
 
 .highlight {
   color: var(--retro-pink);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .subtitleWrapper {
@@ -39,8 +19,7 @@
 .dynamicText {
   display: block;
   color: var(--retro-yellow);
-  font-weight: 500;
-  text-align: center;
+  font-weight: 600;
 }
 
 .linkButton {
@@ -48,10 +27,11 @@
   background-color: var(--text-accent-secondary);
   padding: 0.5em 1.5em;
   color: var(--retro-cream);
-  font-size: 1.4rem;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 0.9751rem + 0.9595cqi, 1.7188rem);
   text-decoration: none;
-
-  @container (min-width: 50rem) {
-    font-size: 1.875rem;
+  &:hover {
+    background-color: var(--retro-yellow);
+    color: var(--retro-cream);
   }
 }

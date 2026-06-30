@@ -1,15 +1,12 @@
 import { motion } from "motion/react";
+import Section from "./Section";
+import Heading from "./Heading";
 import Skills from "./Skills";
 import styles from "./AboutMe.module.css";
 
 function AboutMe({ aboutRef }) {
   return (
-    <section
-      ref={aboutRef}
-      id="about"
-      className={styles.section}
-      aria-labelledby="about-heading"
-    >
+    <Section ref={aboutRef} id="about">
       <motion.div
         initial={{ opacity: 0, x: -15 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -18,9 +15,7 @@ function AboutMe({ aboutRef }) {
         className={styles.contentWrapper}
       >
         <div className={styles.textContainer}>
-          <h2 id="about-heading" className={styles.heading}>
-            About Me
-          </h2>
+          <Heading>About Me</Heading>
           <img
             src="/profile_picture_small.png"
             className={styles.profileImage}
@@ -43,7 +38,7 @@ function AboutMe({ aboutRef }) {
         </div>
         <Skills />
       </motion.div>
-    </section>
+    </Section>
   );
 }
 
