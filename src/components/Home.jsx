@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState, useEffect } from "react";
+import Section from "./Section";
 import styles from "./Home.module.css";
 
 function Home({ homeRef }) {
@@ -28,10 +29,10 @@ function Home({ homeRef }) {
 
     // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
-  }, []);
+  }, [passions.length]);
 
   return (
-    <section ref={homeRef} id="home" className={styles.section}>
+    <Section ref={homeRef} id="home">
       <div className={styles.headerContainer}>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -83,8 +84,6 @@ function Home({ homeRef }) {
           <motion.a
             whileHover={{
               y: -5,
-              backgroundColor: "var(--retro-yellow)",
-              color: "var(--retro-cream)",
             }}
             whileTap={{ scale: 0.95 }}
             animate={{
@@ -97,7 +96,7 @@ function Home({ homeRef }) {
           </motion.a>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 }
 

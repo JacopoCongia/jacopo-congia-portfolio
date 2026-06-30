@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import styles from "./MyProjects.module.css";
+import Section from "./Section";
+import Heading from "./Heading";
 
 function MyProjects({ projectsRef }) {
   const data = [
@@ -48,7 +50,7 @@ function MyProjects({ projectsRef }) {
     };
 
     return (
-      <motion.section
+      <motion.div
         key={project.name}
         variants={cardVariants} // Use variants for cleaner stagger logic
         initial="hidden"
@@ -59,8 +61,8 @@ function MyProjects({ projectsRef }) {
           project.reversed ? styles.cardReversed : styles.cardStandard
         }`}
       >
-        <div className={styles.textContent}>
-          <div>
+        <div className={styles.projectWrapper}>
+          <div className={styles.textWrapper}>
             <h3 className={styles.projectTitle}>{project.name}</h3>
             <p className={styles.projectDesc}>{project.description}</p>
           </div>
@@ -88,16 +90,16 @@ function MyProjects({ projectsRef }) {
           className={styles.projectImage}
           alt={`Screenshot of ${project.name} app`}
         />
-      </motion.section>
+      </motion.div>
     );
   });
   return (
-    <div className={styles.wrapper}>
-      <section ref={projectsRef} id="myprojects" className={styles.section}>
-        <h2 className={styles.heading}> My Projects</h2>
-        <div className={styles.projectsContainer}>{projectsEl}</div>
-      </section>
-    </div>
+    <Section ref={projectsRef} id="myprojects">
+      <div className={styles.projectsContainer}>
+        <Heading>My Projects</Heading>
+        {projectsEl}
+      </div>
+    </Section>
   );
 }
 

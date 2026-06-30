@@ -1,0 +1,16 @@
+.baseSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  container-type: inline-size; /* Enable container queries */
+  background-color: var(--bg-surface);
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  scroll-margin-top: 4rem; /* Keeps the navbar from covering the section */
+  color: var(--text-primary);
+  text-align: center;
+
+  @media (min-width: 50rem) {
+    padding: 8rem 10rem;
+  }
+}

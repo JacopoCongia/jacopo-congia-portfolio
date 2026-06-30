@@ -1,0 +1,11 @@
+.heading {
+  border-left: 0.4rem solid var(--retro-yellow);
+  padding-left: 1rem;
+  font-size: clamp(2.4rem, 2rem + 1.6cqi, 3.2rem);
+  font-family: var(--accent-font);
+  white-space: nowrap;
+
+  @container (min-width: 50rem) {
+    align-self: flex-start;
+  }
+}

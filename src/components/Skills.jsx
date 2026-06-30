@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
+import Heading from "./Heading.jsx";
 import { skills } from "../data/skillIcons.jsx";
 import styles from "./Skills.module.css";
 
 function Skills() {
   return (
     <div className={styles.skillsWrapper}>
-      <h2 className={styles.heading}>Skills</h2>
+      <Heading>Skills</Heading>
       <ul className={styles.skillList}>
         {skills.map((skill) => (
           <motion.li
