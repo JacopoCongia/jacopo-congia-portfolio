@@ -1,5 +1,6 @@
-import { AnimatePresence, motion } from "motion/react";
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { ReactFitty } from "react-fitty";
 import Section from "./Section";
 import styles from "./Home.module.css";
 
@@ -11,8 +12,8 @@ function Home({ homeRef }) {
     "communicating",
     "animation",
     "teaching",
-    "solving problems",
-    "designing pretty things",
+    "solving\nproblems",
+    "designing\npretty things",
     "photography",
     "skating",
     "cooking",
@@ -33,13 +34,16 @@ function Home({ homeRef }) {
 
   return (
     <Section ref={homeRef} id="home">
-      <div className={styles.headerContainer}>
+      <div className={styles.headingWrapper}>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className={styles.title}
         >
-          Hi, I&apos;m <span className={styles.highlight}>Jacopo</span>.
+          <ReactFitty maxSize={120}>
+            Hi, I&apos;m <span className={styles.highlight}>Jacopo</span>.
+          </ReactFitty>
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -47,10 +51,10 @@ function Home({ homeRef }) {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeIn" }}
           className={styles.subtitleWrapper}
         >
-          <span>I&apos;m passionate about...</span>{" "}
-          <div>
+          <ReactFitty maxSize={120}>I&apos;m passionate about...</ReactFitty>
+          <div className={styles.dynamicStage}>
             <AnimatePresence mode="wait">
-              <motion.span
+              <motion.div
                 key={index} // The key tells Framer Motion when the text has changed
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -61,12 +65,19 @@ function Home({ homeRef }) {
                     stiffness: 200, // Tighter spring for the quick changing words
                     damping: 10, // Less damping for a snappier exit
                   },
-                  opacity: { duration: 0.2 }, // Quick fade in/out
+                  opacity: { duration: 0.3 }, // Quick fade in/out
                 }}
                 className={styles.dynamicText}
               >
-                {passions[index]}
-              </motion.span>
+                {/* Split the phrase by '\n' and wrap each line separately! */}
+                {passions[index].split("\n").map((line, i) => (
+                  <div key={i} className={styles.dynamicLine}>
+                    <ReactFitty maxSize={120} minSize={20}>
+                      {line}
+                    </ReactFitty>
+                  </div>
+                ))}
+              </motion.div>
             </AnimatePresence>
           </div>
         </motion.h2>
