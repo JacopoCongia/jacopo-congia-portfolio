@@ -11,12 +11,14 @@ function Home({ homeRef }) {
     "learning",
     "communicating",
     "animation",
-    "teaching",
+    "running",
     "solving\nproblems",
-    "designing\npretty things",
     "photography",
+    "designing\npretty things",
     "skating",
+    "teaching",
     "cooking",
+    "automating\nthe boring\nstuff",
   ];
 
   // State to keep track of the current passion index
