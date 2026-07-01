@@ -1,7 +1,13 @@
-.headerContainer {
-  font-weight: 400;
-  font-size: clamp(1.44rem, 1.1329rem + 1.3104cqi, 2.1484rem);
-  text-align: center;
+.headingWrapper {
+  /* font-size: clamp(1.44rem, 1.1329rem + 1.3104cqi, 2.1484rem); */
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 20rem;
+}
+
+.title {
+  line-height: 0.8;
 }
 
 .highlight {
@@ -12,20 +18,33 @@
 .subtitleWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 8rem;
 }
 
+.dynamicStage {
+  height: 8rem; /* Adjust this so your largest dynamic word doesn't get cut off */
+}
+
 .dynamicText {
-  display: block;
+  width: 100%;
   color: var(--retro-yellow);
-  font-weight: 600;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap; /* Forces Fitty to scale rather than wrap */
+}
+
+.dynamicLine {
+  display: block;
+  width: 100%;
+  line-height: 0.95; /* Tightens up the space between stacked Fitty lines */
 }
 
 .linkButton {
   display: inline-block;
   background-color: var(--text-accent-secondary);
   padding: 0.5em 1.5em;
+  width: 100%;
   color: var(--retro-cream);
   font-weight: 500;
   font-size: clamp(1.2rem, 0.9751rem + 0.9595cqi, 1.7188rem);
