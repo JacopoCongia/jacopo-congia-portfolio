@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import styles from "./MyProjects.module.css";
 import Section from "./Section";
 import Heading from "./Heading";
+import Button from "./Button";
 
 function MyProjects({ projectsRef }) {
   const data = [
@@ -67,22 +68,22 @@ function MyProjects({ projectsRef }) {
             <p className={styles.projectDesc}>{project.description}</p>
           </div>
           <div className={styles.buttonContainer}>
-            <a
+            <Button
               href={project.liveVersion}
               target="_blank"
               rel="noreferrer"
-              className={`${styles.btn} ${styles.btnPrimary}`}
+              variant="primary"
             >
               Live Version
-            </a>
-            <a
+            </Button>
+            <Button
               href={project.gitHub}
               target="_blank"
               rel="noreferrer"
-              className={`${styles.btn} ${styles.btnSecondary}`}
+              variant="secondary"
             >
               GitHub
-            </a>
+            </Button>
           </div>
         </div>
         <img

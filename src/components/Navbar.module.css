@@ -2,10 +2,10 @@
   display: flex;
   position: sticky;
   top: 0;
-  justify-content: center;
   z-index: 50;
   backdrop-filter: blur(0.25rem);
   -webkit-backdrop-filter: blur(0.25rem);
+  container-type: inline-size;
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
@@ -15,18 +15,15 @@
   height: 4rem;
   font-weight: 500;
   font-size: 0.85rem;
-}
 
-@media (min-width: 50rem) {
-  .nav {
-    justify-content: flex-end;
-    padding-right: 2rem;
+  @media (min-width: 50rem) {
     font-size: 1rem;
   }
 }
 
 .navList {
   display: flex;
+  padding: 0;
   color: var(--retro-brown);
 }
 
@@ -34,7 +31,13 @@
   display: flex;
   position: relative;
   align-items: center;
+  transition: all 0.3s ease;
   padding: 0 1rem;
+
+  @container (min-width: 50rem) {
+    justify-content: center;
+    width: 9rem;
+  }
 }
 
 .link {
@@ -44,9 +47,6 @@
 
 .link:hover:not(.linkActive) {
   color: var(--retro-cream);
-}
-.linkActive {
-  color: var(--retro-brown);
 }
 
 .activeIndicator {
