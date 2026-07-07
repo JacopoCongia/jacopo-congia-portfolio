@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ReactFitty } from "react-fitty";
 import Section from "./Section";
+import Button from "./Button";
 import styles from "./Home.module.css";
 
 function Home({ homeRef }) {
@@ -40,7 +41,7 @@ function Home({ homeRef }) {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeIn" }}
           className={styles.title}
         >
           <ReactFitty maxSize={120}>
@@ -54,59 +55,48 @@ function Home({ homeRef }) {
           className={styles.subtitleWrapper}
         >
           <ReactFitty maxSize={120}>I&apos;m passionate about...</ReactFitty>
-          <div className={styles.dynamicStage}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index} // The key tells Framer Motion when the text has changed
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
-                transition={{
-                  y: {
-                    type: "spring",
-                    stiffness: 200, // Tighter spring for the quick changing words
-                    damping: 10, // Less damping for a snappier exit
-                  },
-                  opacity: { duration: 0.3 }, // Quick fade in/out
-                }}
-                className={styles.dynamicText}
-              >
-                {/* Split the phrase by '\n' and wrap each line separately! */}
-                {passions[index].split("\n").map((line, i) => (
-                  <div key={i} className={styles.dynamicLine}>
-                    <ReactFitty maxSize={120} minSize={20}>
-                      {line}
-                    </ReactFitty>
-                  </div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 1.2,
-            type: "spring",
-            stiffness: 260,
-            damping: 20,
-          }}
+          transition={{ duration: 0.8, delay: 1.2, ease: "easeIn" }}
+          className={styles.dynamicStage}
         >
-          <motion.a
-            whileHover={{
-              y: -5,
-            }}
-            whileTap={{ scale: 0.95 }}
-            animate={{
-              scale: [1, 1.02, 1],
-            }}
-            href="#about"
-            className={styles.linkButton}
-          >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index} // The key tells Framer Motion when the text has changed
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{
+                y: {
+                  type: "spring",
+                  stiffness: 200, // Tighter spring for the quick changing words
+                  damping: 10, // Less damping for a snappier exit
+                },
+                opacity: { duration: 0.3 }, // Quick fade in/out
+              }}
+              className={styles.dynamicText}
+            >
+              {/* Split the phrase by '\n' and wrap each line separately! */}
+              {passions[index].split("\n").map((line, i) => (
+                <div key={i} className={styles.dynamicLine}>
+                  <ReactFitty maxSize={120} minSize={20}>
+                    {line}
+                  </ReactFitty>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.6, ease: "easeIn" }}
+        >
+          <Button href="#about" variant="home">
             Start Exploring
-          </motion.a>
+          </Button>
         </motion.div>
       </div>
     </Section>

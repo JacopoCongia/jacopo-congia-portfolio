@@ -1,0 +1,53 @@
+.base {
+  display: inline-flex; /* Useful to have the external behavior of an inline element, but the internal alignment advantages of flexbox */
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  padding: 0.5em 1.5em;
+  width: 100%;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.8374rem + 0.6936cqi, 1.375rem);
+  -webkit-user-select: none;
+  user-select: none;
+  text-decoration: none;
+
+  &:hover {
+    transform: translatey(-0.15rem);
+  }
+
+  &:active {
+    transform: translatey(0);
+  }
+}
+
+.home {
+  background-color: light-dark(var(--retro-pink-darker), var(--retro-pink));
+  color: light-dark(var(--retro-cream), var(--retro-cream));
+  font-size: clamp(1.2rem, 0.9751rem + 0.9595cqi, 1.7188rem);
+
+  &:hover {
+    background-color: light-dark(var(--retro-yellow), var(--retro-yellow));
+    color: light-dark(var(--retro-cream), var(--retro-cream));
+  }
+}
+
+.primary {
+  background-color: light-dark(var(--retro-brown), var(--retro-yellow));
+  color: light-dark(var(--retro-cream), var(--retro-dark-brown));
+
+  &:hover {
+    background-color: light-dark(var(--retro-yellow), var(--retro-cream));
+    color: light-dark(var(--retro-cream), var(--retro-dark-brown));
+  }
+}
+
+.secondary {
+  border: 0.15rem solid light-dark(var(--retro-brown), var(--retro-yellow));
+  background-color: transparent;
+  color: light-dark(var(--retro-brown), var(--retro-yellow));
+
+  &:hover {
+    border-color: light-dark(var(--retro-yellow), var(--retro-cream));
+    color: light-dark(var(--retro-yellow), var(--retro-cream));
+  }
+}
